@@ -2,7 +2,7 @@ all:
 	find * -name "*.java" > sources.txt
 	javac @sources.txt
 
-run:
+run: all
 	java Main scenario.txt
 
 clean:
