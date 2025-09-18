@@ -1,9 +1,11 @@
+import java.io.IOException;
+
 abstract class Flyable {
 	protected WeatherTower weatherTower;
-	abstract void updateConditions();
+	abstract void updateConditions() throws IOException;
 	abstract String getName();
 	abstract int getHeight();
-	abstract void logMessage(String msg);
+	abstract void logMessage(String msg) throws IOException;
 	public void registerTower(WeatherTower p_tower) {
 		this.weatherTower = p_tower;
 	}

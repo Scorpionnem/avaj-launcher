@@ -1,6 +1,7 @@
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.io.IOException;
 
 class Tower {
 	private List<Flyable> observers;
@@ -8,19 +9,19 @@ class Tower {
 	{
 		observers = new ArrayList<>();
 	}
-	public void register(Flyable p_flyable) {
-		System.out.println("Tower says: " + p_flyable.getName() + " just joined the crew!");
+	public void register(Flyable p_flyable) throws IOException {
+		Logger.getInstance().write("Tower says: " + p_flyable.getName() + " just joined the crew!");
 		observers.add(p_flyable);
 	}
-	public void unregister(Flyable p_flyable) {
-		System.out.println("Tower says: " + p_flyable.getName() + " just crashed! (Just kidding, they left...)");
+	public void unregister(Flyable p_flyable) throws IOException {
+		Logger.getInstance().write("Tower says: " + p_flyable.getName() + " just crashed! (Just kidding, they left...)");
 	}
-	protected void conditionChanged() {
+	protected void conditionChanged() throws IOException {
 		for (Flyable flyable : observers) {
 			flyable.updateConditions();
 		}
 	}
-	public void checkLandings() {
+	public void checkLandings() throws IOException {
 		Iterator<Flyable> it = observers.iterator();
 		while(it.hasNext()) {
 			Flyable current = it.next();
@@ -31,8 +32,7 @@ class Tower {
 			}
 		}
 	}
-	public void unregisterAll()
-	{
+	public void unregisterAll() throws IOException {
 		Iterator<Flyable> it = observers.iterator();
 		while(it.hasNext()) {
 			Flyable current = it.next();

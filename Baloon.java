@@ -1,9 +1,11 @@
+import java.io.IOException;
+
 class Baloon extends Aircraft {
 	public Baloon(long p_id, String p_name, Coordinates p_coordinate) {
 		super(p_id, p_name, p_coordinate);
 		this.type = "Baloon";
 	}
-	public void updateConditions() {
+	public void updateConditions() throws IOException {
 		WeatherProvider meteo = WeatherProvider.getInstance();
 		final String currentMeteo = meteo.getCurrentWeather(this.coordinates);
 
