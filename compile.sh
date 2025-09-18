@@ -1,3 +1,3 @@
 find * -name "*.java" > sources.txt
 javac @sources.txt
-java Main
+java Main scenario.txt

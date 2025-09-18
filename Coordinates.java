@@ -12,9 +12,20 @@ class Coordinates {
 		return (longitude);
 	}
 	public int getLatitude() {
-		return (longitude);
+		return (latitude);
 	}
 	public int getHeight() {
-		return (longitude);
+		return (height);
+	}
+	public void setLongitude(int val) {
+		this.longitude = val;
+	}
+	public void setLatitude(int val) {
+		this.latitude = val;
+	}
+	public void setHeight(int val) {
+		this.height = val;
+		if (this.height > 100)
+			this.height = 100;
 	}
 }
