@@ -1,3 +1,5 @@
+package avaj;
+
 import java.io.IOException;
 
 class Helicopter extends Aircraft {

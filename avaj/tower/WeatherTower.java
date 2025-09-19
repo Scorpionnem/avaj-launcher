@@ -1,3 +1,5 @@
+package avaj;
+
 import java.io.IOException;
 
 class WeatherTower extends Tower {

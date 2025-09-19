@@ -1,3 +1,5 @@
+package avaj;
+
 class AircraftFactory {
 	private static AircraftFactory	instance;
 	private int						curId;

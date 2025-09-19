@@ -1,9 +1,8 @@
 all:
-	find * -name "*.java" > sources.txt
-	javac @sources.txt
+	javac -d out `find avaj -name "*.java"`
 
 run: all
-	java Main scenario.txt
+	java -cp out avaj.Main scenario.txt
 
 clean:
-	rm -rf *.class
+	rm -rf out

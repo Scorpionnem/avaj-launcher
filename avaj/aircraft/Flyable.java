@@ -1,3 +1,5 @@
+package avaj;
+
 import java.io.IOException;
 
 abstract class Flyable {
