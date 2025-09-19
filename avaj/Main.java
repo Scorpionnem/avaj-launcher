@@ -11,7 +11,7 @@ public class Main {
 	private final static WeatherTower	tower = new WeatherTower();
 	private final static AircraftFactory airport = AircraftFactory.getInstance();
 
-	private static void parseLine(int lineNbr, String line) throws IncorrectLineException, NumberFormatException, IOException {
+	private static void parseLine(int lineNbr, String line) throws AvajException, NumberFormatException, IOException {
 		if (line.isEmpty())
 			return ;
 
@@ -38,7 +38,7 @@ public class Main {
 			throw new IncorrectLineException("Invalid line in file at line: " + lineNbr);
 	}
 
-	private static void parseFile(String file) throws FileNotFoundException, IncorrectLineException, NumberFormatException, InvalidSimCount, IOException {
+	private static void parseFile(String file) throws FileNotFoundException, NumberFormatException, AvajException, IOException {
 		File	inputFile = new File(file);
 		int		line = 0;
 
@@ -59,7 +59,7 @@ public class Main {
 
 		try {
 			parseFile(args[0]);
-		} catch (IncorrectLineException | NumberFormatException | InvalidSimCount | FileNotFoundException e) {
+		} catch (NumberFormatException | FileNotFoundException | AvajException e) {
 			System.out.println("Error: " + e);
 			return ;
 		} catch (IOException e) {

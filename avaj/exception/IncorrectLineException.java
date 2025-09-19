@@ -1,6 +1,6 @@
 package avaj;
 
-public class IncorrectLineException extends Exception { 
+public class IncorrectLineException extends AvajException { 
 	public IncorrectLineException(String errorMessage) {
 		super(errorMessage);
 	}
